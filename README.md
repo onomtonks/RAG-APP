@@ -1,3 +1,4 @@
+#Current Update as of 12/11/2025
 # RAG-PDF-Chroma
 
 A **Retrieval-Augmented Generation (RAG) system** for PDFs using **ChromaDB**, **Python**, and **sentence embeddings**.  
