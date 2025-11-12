@@ -1,0 +1,17 @@
+{
+  "name": "RAG Python Chroma",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance"
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.analysis.extraPaths": [
+      "/app"
+    ]
+  },
+  "postCreateCommand": "pip install --upgrade pip setuptools wheel && pip install -r requirements.txt"
+}

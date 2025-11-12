@@ -1,0 +1,7 @@
+chromadb>=0.4.22
+sentence-transformers  # optional if you want embeddings
+pypdf
+pdf2image
+pytesseract
+Pillow
+langchain-text-splitters
