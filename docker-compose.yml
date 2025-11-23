@@ -1,25 +1,26 @@
-version: "3.9"
+version: '3.0'
 
 services:
+  # 1. The Vector Database - ChromaDB
   chroma:
-    image: chromadb/chroma:latest
+    image: chromadb/chroma:0.4.15
     container_name: chroma
     ports:
       - "8000:8000"
     volumes:
-      - chroma-data:/chroma
+      - ./chroma_db:/chroma/chroma  # Persist data locally
 
+  # 2. Your Python Application - 'app'
   app:
     build: .
-    container_name: python-app
+    image: my-python-app
+    ports:
+      - "5000:5000"
+    environment:
+      - CHROMA_HOST=chroma  # Tells app to look for container named 'chroma'
+      - CHROMA_PORT=8000
     depends_on:
       - chroma
-    environment:
-      - CHROMA_HOST=chroma
-      - CHROMA_PORT=8000
-    volumes:
-      - .:/app   # <-- mount your project folder
-
-volumes:
-  chroma-data:
-
+    # 🚨 CRITICAL: These flags ensure the container stays open and handles interactive input (input())
+    stdin_open: true  
+    tty: true
