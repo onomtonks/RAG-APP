@@ -17,15 +17,17 @@ Use the system as a study assistant for revision, summaries, and explanations
 
 ✨ Features
 
-PDF ingestion and paragraph-based chunking
+PDF ingestion and dividing text into paragraphs
 
-Embedding generation using Sentence Transformers
+Embedding generation using Sentence Transformers on paragraphs
 
 Dimensionality reduction using PCA
 
 Clustering using HDBSCAN for context grouping
 
-Vector storage and retrieval using ChromaDB
+converting each cluster into a single chunks
+
+Vector storage of each chunk and retrieval using ChromaDB
 
 Query processing using LangChain + LLMs
 
