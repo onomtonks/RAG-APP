@@ -128,4 +128,4 @@ Environment
 
 python-dotenv
 
-
+[MIT LICENSE](https://github.com/onomtonks/RAG-APP/blob/master/LICENSE.txt)
